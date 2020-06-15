@@ -51,6 +51,10 @@ else
 include vendor/everest/config/vanilla.mk
 endif
 
+# Lineage-specific file
+PRODUCT_COPY_FILES += \
+    vendor/everest/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
+
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
