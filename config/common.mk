@@ -57,6 +57,9 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+# Bootanimation
+include vendor/everest/config/bootanimation.mk
+
 # Include Everest Versioning
 include vendor/everest/config/version.mk
 
