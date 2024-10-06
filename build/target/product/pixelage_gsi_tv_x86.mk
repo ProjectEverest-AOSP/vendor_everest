@@ -14,11 +14,11 @@
 
 $(call inherit-product, device/google/atv/products/aosp_tv_x86.mk)
 
-include vendor/pixelage/build/target/product/pixelage_generic_tv_target.mk
+include vendor/everest/build/target/product/everest_generic_tv_target.mk
 
-PRODUCT_NAME := pixelage_gsi_tv_x86
+PRODUCT_NAME := everest_gsi_tv_x86
 
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=
 
-PRODUCT_SDK_ADDON_NAME := pixelage
+PRODUCT_SDK_ADDON_NAME := everest
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

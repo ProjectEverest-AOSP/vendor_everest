@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/pixelage/build/target/product/pixelage_generic_tv_target.mk
+include vendor/everest/build/target/product/everest_generic_tv_target.mk
 
 $(call inherit-product, device/google/atv/products/sdk_atv_armv7.mk)
 
@@ -22,8 +22,8 @@ TARGET_NO_KERNEL_OVERRIDE := true
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 
 # Overrides
-PRODUCT_NAME := pixelage_sdk_tv_arm
-PRODUCT_MODEL := Project Pixelage Android TV SDK built for ARM
+PRODUCT_NAME := everest_sdk_tv_arm
+PRODUCT_MODEL := Project everest Android TV SDK built for ARM
 
-PRODUCT_SDK_ADDON_NAME := pixelage
+PRODUCT_SDK_ADDON_NAME := everest
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

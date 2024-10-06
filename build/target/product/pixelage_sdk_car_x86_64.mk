@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/pixelage/build/target/product/pixelage_generic_car_target.mk
+include vendor/everest/build/target/product/everest_generic_car_target.mk
 
 $(call inherit-product, device/generic/car/emulator/aosp_car_emulator.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/sdk.mk)
 
-PRODUCT_NAME := pixelage_sdk_car_x86_64
+PRODUCT_NAME := everest_sdk_car_x86_64
 
-PRODUCT_SDK_ADDON_NAME := pixelage
+PRODUCT_SDK_ADDON_NAME := everest
 PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := $(LOCAL_PATH)/source.properties

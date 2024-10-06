@@ -13,9 +13,9 @@
 # limitations under the License.
 
 $(call inherit-product, device/generic/goldfish/64bitonly/product/sdk_phone64_arm64.mk)
-$(call inherit-product, vendor/pixelage/build/target/product/pixelage_sdk_phone_arm64_board.mk)
+$(call inherit-product, vendor/everest/build/target/product/everest_sdk_phone_arm64_board.mk)
 
-include vendor/pixelage/build/target/product/pixelage_generic_target.mk
+include vendor/everest/build/target/product/everest_generic_target.mk
 
 # Always build modules from source
 PRODUCT_MODULE_BUILD_FROM_SOURCE := true
@@ -24,8 +24,8 @@ PRODUCT_MODULE_BUILD_FROM_SOURCE := true
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
 
 # Overrides
-PRODUCT_NAME := pixelage_sdk_phone_arm64
-PRODUCT_MODEL := Project Pixelage Android SDK built for arm64
+PRODUCT_NAME := everest_sdk_phone_arm64
+PRODUCT_MODEL := Project everest Android SDK built for arm64
 
-PRODUCT_SDK_ADDON_NAME := pixelage
-PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := vendor/pixelage/build/target/product/source.properties
+PRODUCT_SDK_ADDON_NAME := everest
+PRODUCT_SDK_ADDON_SYS_IMG_SOURCE_PROP := vendor/everest/build/target/product/source.properties

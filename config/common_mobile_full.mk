@@ -1,5 +1,5 @@
-# Inherit common Pixelage stuff
-$(call inherit-product, vendor/pixelage/config/common_mobile.mk)
+# Inherit common everest stuff
+$(call inherit-product, vendor/everest/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 
@@ -18,6 +18,6 @@ PRODUCT_PACKAGES += \
     unrar \
     zstd
 
-# Include Pixelage LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/pixelage/overlay/dictionaries
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pixelage/overlay/dictionaries
+# Include everest LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/everest/overlay/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/everest/overlay/dictionaries

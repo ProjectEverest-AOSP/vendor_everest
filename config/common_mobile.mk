@@ -1,5 +1,5 @@
-# Inherit common mobile Pixelage stuff
-$(call inherit-product, vendor/pixelage/config/common.mk)
+# Inherit common mobile everest stuff
+$(call inherit-product, vendor/everest/config/common.mk)
 
 # Apps
 PRODUCT_PACKAGES += \

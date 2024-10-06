@@ -15,10 +15,10 @@
 $(call inherit-product, build/target/product/gsi_release.mk)
 $(call inherit-product, device/google/atv/products/aosp_tv_arm.mk)
 
-include vendor/pixelage/build/target/product/pixelage_generic_tv_target.mk
+include vendor/everest/build/target/product/everest_generic_tv_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 
-PRODUCT_NAME := pixelage_gsi_tv_arm
+PRODUCT_NAME := everest_gsi_tv_arm
 
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS :=

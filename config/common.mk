@@ -4,7 +4,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 # GApps
 $(call inherit-product, vendor/gms/products/gms.mk)
 
-PRODUCT_BRAND ?= ProjectPixelage
+PRODUCT_BRAND ?= Projecteverest
 
 PRODUCT_BUILD_PROP_OVERRIDES += DateUtc=0
 
@@ -39,14 +39,14 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/pixelage/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/pixelage/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
+    vendor/everest/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/everest/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/pixelage/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/pixelage/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/pixelage/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/everest/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/everest/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/everest/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/backuptool_ab.sh \
@@ -84,19 +84,19 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 ifneq ($(TARGET_DISABLE_EPPE),true)
 # Require all requested packages to exist
-$(call enforce-product-packages-exist-internal,$(wildcard device/*/$(PIXELAGE_BUILD)/$(TARGET_PRODUCT).mk),product_manifest.xml rild Calendar Launcher3 Launcher3Go Launcher3QuickStep Launcher3QuickStepGo android.hidl.memory@1.0-impl.vendor vndk_apex_snapshot_package)
+$(call enforce-product-packages-exist-internal,$(wildcard device/*/$(everest_BUILD)/$(TARGET_PRODUCT).mk),product_manifest.xml rild Calendar Launcher3 Launcher3Go Launcher3QuickStep Launcher3QuickStepGo android.hidl.memory@1.0-impl.vendor vndk_apex_snapshot_package)
 endif
 
 # Build Manifest
 PRODUCT_PACKAGES += \
     build-manifest
 
-# Pixelage packages
+# everest packages
 #PRODUCT_PACKAGES += \
 #    Updater
 
 PRODUCT_COPY_FILES += \
-    vendor/pixelage/prebuilt/common/etc/init/init.pixelage-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.pixelage-updater.rc
+    vendor/everest/prebuilt/common/etc/init/init.everest-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.everest-updater.rc
 
 # Config
 PRODUCT_PACKAGES += \
@@ -141,7 +141,7 @@ PRODUCT_PACKAGES += \
     start-ssh
 
 PRODUCT_COPY_FILES += \
-    vendor/pixelage/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
+    vendor/everest/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
 # rsync
 PRODUCT_PACKAGES += \
@@ -185,10 +185,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pixelage/overlay/no-rro
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/everest/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/pixelage/overlay/common \
-    vendor/pixelage/overlay/no-rro
+    vendor/everest/overlay/common \
+    vendor/everest/overlay/no-rro
 
 PRODUCT_PACKAGES += \
     CustomPixelLauncherOverlay \
@@ -204,12 +204,12 @@ CUSTOM_LOCALES += \
     fur_IT
 
 # Bootanimation
-include vendor/pixelage/config/bootanimation.mk
+include vendor/everest/config/bootanimation.mk
 
 # Fonts
-include vendor/pixelage/config/fonts.mk
+include vendor/everest/config/fonts.mk
 
 # Version
-include vendor/pixelage/config/version.mk
+include vendor/everest/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk

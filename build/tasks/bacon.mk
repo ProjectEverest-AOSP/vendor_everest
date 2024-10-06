@@ -14,14 +14,14 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Pixelage OTA update package
+# everest OTA update package
 
-PIXELAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/ProjectPixelage-$(PIXELAGE_VERSION).zip
+everest_TARGET_PACKAGE := $(PRODUCT_OUT)/Projecteverest-$(everest_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(PIXELAGE_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(PIXELAGE_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(PIXELAGE_TARGET_PACKAGE).sha256sum
-	@echo "Package Complete: $(PIXELAGE_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(everest_TARGET_PACKAGE)
+	$(hide) $(SHA256) $(everest_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(everest_TARGET_PACKAGE).sha256sum
+	@echo "Package Complete: $(everest_TARGET_PACKAGE)" >&2
